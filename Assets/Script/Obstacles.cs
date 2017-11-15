@@ -6,8 +6,10 @@ public class Obstacles : MonoBehaviour {
 
     public int Degats = 1;
     public float obstacleHealth;
+    public bool isDestrutible = false;
     public float obstacleValue;
     private float scoreAdded;
+
 
 
 	// Use this for initialization
@@ -33,7 +35,7 @@ public class Obstacles : MonoBehaviour {
             player.TakeDamage(Degats);
 
         }
-        else if(other.gameObject.tag == "Bullet")
+        else if(other.gameObject.tag == "Bullet" && isDestrutible)
         {
             obstacleHealth -= 1;
             if(obstacleHealth <= 0)
