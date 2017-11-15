@@ -30,8 +30,8 @@ public class LevelManager : MonoBehaviour {
 	public void AddGlobalScore (float addScore)
     {
         actualScore += addScore;
-        scoreText.text = "Score : " + actualScore.ToString();
-        Debug.Log(actualScore);
+        scoreText.text = "Score : " + actualScore.ToString("f0");
+        //Debug.Log(actualScore);
     }
 
     }

@@ -91,7 +91,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     void LateUpdate () 
 	{
-		//Debug.Log(rbShip.velocity.z);
+		Debug.Log(rbShip.velocity.z);
 	}
 
     void Shoot ()
@@ -139,7 +139,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
     void ScoreAdding ()
     {
         cooldown += 1f;
-        scoreAdded = spdShip * 10;
+        scoreAdded = rbShip.velocity.z * 10;
         LevelManager.Instance.AddGlobalScore(scoreAdded);
     }
 
