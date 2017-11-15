@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
@@ -39,6 +40,12 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     private float cooldown;
     private float scoreAdded;
+
+    // Pause System //
+
+    public bool pause = false;
+    public Transform player;
+    public Text pauseTxt;
 
     void Awake () 
 	{
@@ -87,6 +94,11 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
         if (Input.GetButtonDown("Fire1"))
         {
             Shoot();
+        }
+
+        if (Input.GetButtonDown("Pause"))
+        {
+            Pause();
         }
     }
 
@@ -144,6 +156,24 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
         cooldown += 1f;
         scoreAdded = rbShip.velocity.z * 10;
         LevelManager.Instance.AddGlobalScore(scoreAdded);
+    }
+
+    void Pause ()
+    {
+        if(pause == false)
+        {
+            Time.timeScale = 0;
+            player.GetComponent<PlayerMoves>().enabled = false;
+            pauseTxt.GetComponent<Text>().enabled = true;
+            pause = true;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            player.GetComponent<PlayerMoves>().enabled = true;
+            pauseTxt.GetComponent<Text>().enabled = false;
+            pause = false;
+        }
     }
 
 
