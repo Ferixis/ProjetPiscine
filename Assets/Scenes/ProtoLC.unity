@@ -214,6 +214,52 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1001 &168870207
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 6.585928
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 89.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813154735863436, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+      propertyPath: m_Name
+      value: CubeObstacle (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f0936214034db34419f10dc038a4fc66, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &328302747
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +646,7 @@ Prefab:
     - target: {fileID: 114785712610286420, guid: b6f90f78fe60ca945a6bf26b8f567f39,
         type: 2}
       propertyPath: spdShip
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114785712610286420, guid: b6f90f78fe60ca945a6bf26b8f567f39,
         type: 2}
@@ -621,6 +667,16 @@ Prefab:
         type: 2}
       propertyPath: boostValue
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785712610286420, guid: b6f90f78fe60ca945a6bf26b8f567f39,
+        type: 2}
+      propertyPath: ringBonus
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114785712610286420, guid: b6f90f78fe60ca945a6bf26b8f567f39,
+        type: 2}
+      propertyPath: maxSpd
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6f90f78fe60ca945a6bf26b8f567f39, type: 2}

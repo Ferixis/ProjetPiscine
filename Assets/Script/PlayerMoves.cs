@@ -30,9 +30,10 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
     public int Basehealth;
     private int CurHealth;
 
-    // Speed Boost // 
+    // Ring Boost // 
 
     public float boostValue;
+    public float ringBonus;
 
     // Score //
 
@@ -111,7 +112,9 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     public void Boost ()
     {
+        scoreAdded += ringBonus;
         spdShip += boostValue;
+        LevelManager.Instance.AddGlobalScore(scoreAdded);
         //Debug.Log(spdShip);
     }
 
