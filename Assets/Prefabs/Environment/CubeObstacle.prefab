@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1813154735863436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.4, y: 26.52, z: 59.6}
+  m_LocalPosition: {x: 9.71681, y: 6.585928, z: 76.91}
   m_LocalScale: {x: 3.229741, y: 5.658122, z: 5.658122}
   m_Children: []
   m_Father: {fileID: 0}
@@ -106,3 +106,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Degats: 1
+  obstacleHealth: 5

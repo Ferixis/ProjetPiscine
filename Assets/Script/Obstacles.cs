@@ -5,6 +5,8 @@ using UnityEngine;
 public class Obstacles : MonoBehaviour {
 
     public int Degats = 1;
+    public float obstacleHealth;
+
 
 	// Use this for initialization
 	void Start () {
@@ -23,15 +25,20 @@ public class Obstacles : MonoBehaviour {
         ITakeDamage player = other.gameObject.GetComponentInParent<ITakeDamage>();
         Debug.Log(player);
 
-        if(player !=null)
+        if (player != null)
         {
 
             player.TakeDamage(Degats);
 
         }
-
-       
-           
+        else if(other.gameObject.tag == "Bullet")
+        {
+            obstacleHealth -= 1;
+            if(obstacleHealth <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 
-    }
+}
