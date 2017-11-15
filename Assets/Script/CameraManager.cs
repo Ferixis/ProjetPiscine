@@ -41,7 +41,7 @@ public class CameraManager : MonoBehaviour {
         //If the c button is pressed, switch to the next camera
         //Set the camera at the current index to inactive, and set the next one in the array to active
         //When we reach the end of the camera array, move back to the beginning or the array.
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetButtonDown("Camera"))
         {
             currentCameraIndex++;
             Debug.Log("C button has been pressed. Switching to the next camera");
