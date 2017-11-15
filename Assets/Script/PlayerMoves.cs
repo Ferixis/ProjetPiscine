@@ -33,6 +33,11 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     public float boostValue;
 
+    // Score //
+
+    public float cooldown;
+    public float scoreAdded;
+
     void Awake () 
 	{
 		rbShip = GetComponent<Rigidbody>();
@@ -59,10 +64,17 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
             newVelocity.y = Mathf.SmoothDamp(newVelocity.y, targetVelocityY, ref smoothXVelocity, Time.deltaTime);
             rbShip.velocity = newVelocity;
 
+        cooldown -= Time.deltaTime;
+        if(cooldown <= 0)
+        {
+            ScoreAdding();
+        }
+
     }
 
     void Update()
     {
+        
         if(Input.GetButtonDown("Fire1"))
         {
             Shoot();
@@ -116,6 +128,11 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     }
 
+    void ScoreAdding ()
+    {
+        scoreAdded = spdShip * 10;
+        LevelManager.Instance.AddGlobalScore(scoreAdded);
+    }
 
 
 
