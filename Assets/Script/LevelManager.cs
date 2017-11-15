@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
-using System;
 using UnityEngine.UI;
+using System;
 
 public class LevelManager : MonoBehaviour {
 
     private float actualScore;
     public Text scoreText;
-
+    
     public static LevelManager Instance { get; private set; }
 
     public TimeSpan RunningTime
@@ -30,7 +30,7 @@ public class LevelManager : MonoBehaviour {
 	public void AddGlobalScore (float addScore)
     {
         actualScore += addScore;
-        scoreText.text = "Score" + actualScore.ToString();
+        scoreText.text = "Score : " + actualScore.ToString();
         Debug.Log(actualScore);
     }
 

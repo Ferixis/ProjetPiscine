@@ -36,8 +36,8 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     // Score //
 
-    public float cooldown;
-    public float scoreAdded;
+    private float cooldown;
+    private float scoreAdded;
 
     void Awake () 
 	{
@@ -47,6 +47,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
     private void Start()
     {
         CurHealth = Basehealth;
+        cooldown = 0f;
     }
 
 
@@ -73,11 +74,10 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
             rbShip.velocity = newVelocity;
 
         cooldown -= Time.deltaTime;
-        if(cooldown <= 0)
+        if (cooldown <= 0)
         {
             ScoreAdding();
         }
-
     }
 
     void Update()
@@ -138,6 +138,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     void ScoreAdding ()
     {
+        cooldown += 1f;
         scoreAdded = spdShip * 10;
         LevelManager.Instance.AddGlobalScore(scoreAdded);
     }

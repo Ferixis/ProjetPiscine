@@ -455,15 +455,15 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1197184329}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 328302751}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.68455404, y: 0.8639739}
-  m_AnchorMax: {x: 0.9738735, y: 0.9514885}
+  m_AnchorMin: {x: 0.8151571, y: 0.9271759}
+  m_AnchorMax: {x: 0.990542, y: 0.9818503}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -488,10 +488,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 28
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -550,6 +550,11 @@ Prefab:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e93280c4e6bcfd3448752b84a2b658c1, type: 2}
+    - target: {fileID: 114785712610286420, guid: b6f90f78fe60ca945a6bf26b8f567f39,
+        type: 2}
+      propertyPath: cooldown
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6f90f78fe60ca945a6bf26b8f567f39, type: 2}
   m_IsPrefabParent: 0
@@ -580,7 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aff188fd0f3e0242901fc3f769b13e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualScore: 0
+  scoreText: {fileID: 1197184331}
 --- !u!4 &1768996997
 Transform:
   m_ObjectHideFlags: 0
