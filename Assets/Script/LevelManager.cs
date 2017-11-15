@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System;
 
-
-
 public class LevelManager : MonoBehaviour {
+
+    private float actualScore;
 
     public static LevelManager Instance { get; private set; }
 
@@ -25,6 +25,11 @@ public class LevelManager : MonoBehaviour {
 
         _startedTime = DateTime.UtcNow;
 	}
-	
+	public void AddGlobalScore (float addScore)
+    {
+        actualScore += addScore;
+        Debug.Log(actualScore);
+    }
+
     }
 
