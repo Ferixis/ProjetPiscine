@@ -463,6 +463,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114785712610286420, guid: b6f90f78fe60ca945a6bf26b8f567f39,
+        type: 2}
+      propertyPath: Basehealth
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b6f90f78fe60ca945a6bf26b8f567f39, type: 2}
   m_IsPrefabParent: 0
@@ -778,7 +783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4aff188fd0f3e0242901fc3f769b13e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullHealth: 1
 --- !u!4 &1986130856
 Transform:
   m_ObjectHideFlags: 0

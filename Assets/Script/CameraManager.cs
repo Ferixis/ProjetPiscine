@@ -6,8 +6,17 @@ public class CameraManager : MonoBehaviour {
 
     public Camera[] cameras;
     private int currentCameraIndex;
+    public static CameraManager Instance;
 
     // Use this for initialization
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+
+
     void Start()
     {
         currentCameraIndex = 0;
@@ -54,5 +63,17 @@ public class CameraManager : MonoBehaviour {
 
 
         }
+
+
+    }
+
+    public void UnParentCamera()
+    {
+        foreach(Camera cm in cameras) 
+        {
+            cm.transform.parent = null;
+
+        }
+        
     }
 }

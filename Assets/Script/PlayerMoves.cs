@@ -27,6 +27,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
     private GameObject projectileRight;
     private GameObject projectileLeft;
 
+    public int Basehealth;
     private int CurHealth;
 
     // Speed Boost // 
@@ -37,8 +38,15 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 	{
 		rbShip = GetComponent<Rigidbody>();
 	}
-	
-	void FixedUpdate () 
+
+    private void Start()
+    {
+        CurHealth = Basehealth;
+    }
+
+
+
+    void FixedUpdate () 
 	{
         Vector3 newVelocity = rbShip.velocity;
         if(rbShip.velocity.z > maxSpd)
@@ -110,7 +118,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     private void Kill()
     {
-
+        CameraManager.Instance.UnParentCamera();
         Destroy(this.gameObject);
         Debug.Log("Death");
 
