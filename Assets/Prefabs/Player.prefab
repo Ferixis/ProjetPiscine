@@ -2136,17 +2136,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888a881483c40c9408ac08522fcdb527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spdShip: 8
-  maxSpd: 16
+  spdShip: 4
+  maxSpd: 24
   straffMaxSpeed: 8
   straffTime: 5
   projectileToShoot: {fileID: 1553744080704550, guid: 56f839bad76d9b0488acc06e2dceb7cc,
     type: 2}
-  projectileSpd: 30
+  projectileSpd: 10
   rightCanonSpawn: {fileID: 4003498235737144}
   leftCanonSpawn: {fileID: 4496103593473230}
   shot: {fileID: 1460682300267606}
-  boostValue: 0
+  Basehealth: 1
+  boostValue: 3
+  ringBonus: 1000
 --- !u!124 &124517557152861412
 Behaviour:
   m_ObjectHideFlags: 1
