@@ -6,6 +6,8 @@ public class Obstacles : MonoBehaviour {
 
     public int Degats = 1;
     public float obstacleHealth;
+    public float obstacleValue;
+    private float scoreAdded;
 
 
 	// Use this for initialization
@@ -36,6 +38,8 @@ public class Obstacles : MonoBehaviour {
             obstacleHealth -= 1;
             if(obstacleHealth <= 0)
             {
+                scoreAdded = obstacleValue;
+                LevelManager.Instance.AddGlobalScore(scoreAdded);
                 Destroy(this.gameObject);
             }
         }

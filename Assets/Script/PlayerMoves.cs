@@ -91,7 +91,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     void LateUpdate () 
 	{
-		Debug.Log(rbShip.velocity.z);
+		//Debug.Log(rbShip.velocity.z);
 	}
 
     void Shoot ()
