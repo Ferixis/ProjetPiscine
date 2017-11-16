@@ -52,6 +52,10 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     private float cooldown;
     private float scoreAdded;
 
+    // Collectable //
+
+    public float itemValue;
+
     // Feedback //
 
     public ParticleSystem psSpeed;
@@ -211,6 +215,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         psrSpeed.lengthScale = rbShip.velocity.z * 5;
     }
 
+    public void Collectable ()
+    {
+        scoreAdded += itemValue;
+        LevelManager.Instance.AddGlobalScore(scoreAdded);
+    }
 }
 
 
