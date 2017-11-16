@@ -1016,6 +1016,7 @@ GameObject:
   - component: {fileID: 641377526}
   - component: {fileID: 641377524}
   - component: {fileID: 641377527}
+  - component: {fileID: 641377528}
   m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
@@ -1039,6 +1040,7 @@ MonoBehaviour:
   maxSpd: 20
   straffMaxSpeed: 16
   straffTime: 5
+  animPlayer: {fileID: 641377528}
   projectileToShoot: {fileID: 1553744080704550, guid: 56f839bad76d9b0488acc06e2dceb7cc,
     type: 2}
   projectileSpd: 20
@@ -1125,7 +1127,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1773428742
+  randomSeed: 1342441996
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -4380,6 +4382,23 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!95 &641377528
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 641377523}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2773fd8a53cc2464583cc7340a45e5e7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &684077518
 GameObject:
   m_ObjectHideFlags: 0
@@ -4767,7 +4786,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 895567295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.220844, y: 26.288929, z: -46.296703}
+  m_LocalPosition: {x: -28.220844, y: 26.288929, z: -46.2967}
   m_LocalScale: {x: 1.29755, y: 1.29755, z: 1.29755}
   m_Children:
   - {fileID: 585554624}
