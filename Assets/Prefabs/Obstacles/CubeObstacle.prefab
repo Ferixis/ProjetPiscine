@@ -107,4 +107,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Degats: 1
   obstacleHealth: 5
+  isDestrutible: 0
   obstacleValue: 100
