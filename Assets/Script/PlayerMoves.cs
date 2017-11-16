@@ -41,13 +41,24 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
     private float cooldown;
     private float scoreAdded;
 
+    // Feedback //
+
+    public ParticleSystem psSpeed;
+    public ParticleSystemRenderer psrSpeed;
+    public ParticleSystem.EmissionModule emissionSpeed;
+    private float cooldownParticle;
+
     void Awake () 
 	{
 		rbShip = GetComponent<Rigidbody>();
+        psSpeed = GetComponent<ParticleSystem>();
+        emissionSpeed = psSpeed.emission;
+        psrSpeed = GetComponent<ParticleSystemRenderer>();
 	}
 
     private void Start()
     {
+        
         CurHealth = Basehealth;
         cooldown = 0f;
     }
@@ -79,7 +90,15 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
         if (cooldown <= 0)
         {
             ScoreAdding();
+           
         }
+
+        cooldownParticle -= Time.deltaTime;
+        if (cooldownParticle <= 0)
+        {
+            SetSpeedParticleValue();
+        }
+
     }
 
     void Update()
@@ -89,6 +108,8 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
         {
             Shoot();
         }
+
+
     }
 
     void LateUpdate () 
@@ -145,6 +166,13 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
         cooldown += 1f;
         scoreAdded = rbShip.velocity.z * 10;
         LevelManager.Instance.AddGlobalScore(scoreAdded);
+    }
+
+    void SetSpeedParticleValue ()
+    {
+        cooldownParticle += 1.5f;
+        emissionSpeed.rateOverTime = rbShip.velocity.z * 5;
+        psrSpeed.lengthScale = rbShip.velocity.z * 10;
     }
 
 }
