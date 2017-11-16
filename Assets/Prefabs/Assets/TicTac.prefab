@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 136427320133286520}
   - component: {fileID: 23608581159585442}
   - component: {fileID: 54722886555159386}
+  - component: {fileID: 114947752266146260}
   m_Layer: 9
   m_Name: TicTac
   m_TagString: Bullet
@@ -97,6 +98,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 2
+--- !u!114 &114947752266146260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1553744080704550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f562d9165485c154ebb233357d412296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  Degats: 1
 --- !u!136 &136427320133286520
 CapsuleCollider:
   m_ObjectHideFlags: 1

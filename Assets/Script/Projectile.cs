@@ -1,34 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public float maxHealth = 100f;
     private float _currentHealth = 0f;
+    public int Degats = 1;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start ()
+    {
 
         _currentHealth = maxHealth;
 
 	}
 
 
-    public void TakeDamage(float damage, GameObject instigator) {
+    public void TakeDamage(float damage, GameObject instigator)
+    {
 
         _currentHealth -= damage;
-
-
-            }
-
-	// Update is called once per frame
-	void Update () {
-		
-
-
-
-
 	}
+
+    void OnCollisionEnter(Collision other)
+    {
+       
+        ITakeDamage Obstacles = other.gameObject.GetComponentInParent<ITakeDamage>();
+        Debug.Log(Obstacles);
+
+        if (Obstacles != null)
+        {
+
+            Obstacles.TakeDamage(Degats);
+
+        }
+        Destroy(this.gameObject);
+
+    }
 }
