@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject endingBoard;
     public Transform player;
     public GameObject audioObj;
+    
 
     public static LevelManager Instance { get; private set; }
 
@@ -50,6 +51,7 @@ public class LevelManager : MonoBehaviour {
         player.GetComponent<PlayerMoves>().enabled = false;
         audioObj.SetActive(false);
         endingBoard.SetActive(true);
+        //SceneManager.LoadScene();
     }
 
     }
