@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerMoves : MonoBehaviour,ITakeDamage {
+public class PlayerMoves : MonoBehaviour, ITakeDamage
+{
 
     // Move //
 
-	public float spdShip;
+    public float spdShip;
     public float maxSpd;
     public float straffMaxSpeed;
     public float straffTime = 0f;
@@ -23,13 +24,20 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
     public Transform rightCanonSpawn;
     public Transform leftCanonSpawn;
     public GameObject shot;
-    private AudioClip shotSnd; 
+    private AudioClip shotSnd;
 
     private GameObject projectileRight;
     private GameObject projectileLeft;
 
-    public int Basehealth;
-    private int CurHealth;
+    // Health //
+
+    public int Basehealth;          
+    private int CurHealth;          
+    private int HeartIndex;         
+    public GameObject Heart1;       
+    public GameObject Heart2;       
+    public GameObject Heart3;       
+    private List<GameObject> Hearts;    
 
     // Ring Boost // 
 
@@ -48,27 +56,31 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
     public ParticleSystem.EmissionModule emissionSpeed;
     private float cooldownParticle;
 
-    void Awake () 
-	{
-		rbShip = GetComponent<Rigidbody>();
+    void Awake()
+    {
+        rbShip = GetComponent<Rigidbody>();
         psSpeed = GetComponent<ParticleSystem>();
         emissionSpeed = psSpeed.emission;
         psrSpeed = GetComponent<ParticleSystemRenderer>();
-	}
+    }
 
     private void Start()
     {
-        
+        Hearts = new List<GameObject>();
         CurHealth = Basehealth;
+        HeartIndex = CurHealth - 1; 
+        Hearts.Add(Heart1);         
+        Hearts.Add(Heart2);
+        Hearts.Add(Heart3);
         cooldown = 0f;
     }
 
 
 
-    void FixedUpdate () 
-	{
+    void FixedUpdate()
+    {
         Vector3 newVelocity = rbShip.velocity;
-        if(rbShip.velocity.z > maxSpd)
+        if (rbShip.velocity.z > maxSpd)
         {
             newVelocity.z = maxSpd;
         }
@@ -78,19 +90,19 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
             newVelocity.z += spdShip * Time.deltaTime;
         }
 
-            float targetVelocityX = Input.GetAxis("Horizontal") * straffMaxSpeed;
-            newVelocity.x = Mathf.SmoothDamp(newVelocity.x, targetVelocityX, ref smoothXVelocity, Time.deltaTime);
-            rbShip.velocity = newVelocity;
+        float targetVelocityX = Input.GetAxis("Horizontal") * straffMaxSpeed;
+        newVelocity.x = Mathf.SmoothDamp(newVelocity.x, targetVelocityX, ref smoothXVelocity, Time.deltaTime);
+        rbShip.velocity = newVelocity;
 
-            float targetVelocityY = Input.GetAxis("Vertical") * straffMaxSpeed;
-            newVelocity.y = Mathf.SmoothDamp(newVelocity.y, targetVelocityY, ref smoothXVelocity, Time.deltaTime);
-            rbShip.velocity = newVelocity;
+        float targetVelocityY = Input.GetAxis("Vertical") * straffMaxSpeed;
+        newVelocity.y = Mathf.SmoothDamp(newVelocity.y, targetVelocityY, ref smoothXVelocity, Time.deltaTime);
+        rbShip.velocity = newVelocity;
 
         cooldown -= Time.deltaTime;
         if (cooldown <= 0)
         {
             ScoreAdding();
-           
+
         }
 
         cooldownParticle -= Time.deltaTime;
@@ -112,17 +124,17 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     }
 
-    void LateUpdate () 
-	{
-		//Debug.Log(rbShip.velocity.z);
-	}
+    void LateUpdate()
+    {
+        //Debug.Log(rbShip.velocity.z);
+    }
 
-    void Shoot ()
+    void Shoot()
     {
         AudioSource shotSnd = shot.GetComponent<AudioSource>();
         shotSnd.Play();
 
-        projectileRight = Instantiate(projectileToShoot,rightCanonSpawn.position,rightCanonSpawn.rotation);
+        projectileRight = Instantiate(projectileToShoot, rightCanonSpawn.position, rightCanonSpawn.rotation);
         projectileLeft = Instantiate(projectileToShoot, leftCanonSpawn.position, leftCanonSpawn.rotation);
 
         projectileRight.GetComponent<Rigidbody>().velocity = transform.forward * rbShip.velocity.z * projectileSpd;
@@ -132,7 +144,7 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
         Destroy(projectileLeft, 2.0f);
     }
 
-    public void Boost ()
+    public void Boost()
     {
         scoreAdded += ringBonus;
         spdShip += boostValue;
@@ -146,11 +158,14 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
         CurHealth -= damage;
         Debug.Log("HIT");
 
-        if(CurHealth <= 0)
+        Hearts[HeartIndex].SetActive(false);    
+        HeartIndex--;                           
+
+        if (CurHealth <= 0)
         {
             Kill();
         }
-       
+
     }
 
     private void Kill()
@@ -161,14 +176,14 @@ public class PlayerMoves : MonoBehaviour,ITakeDamage {
 
     }
 
-    void ScoreAdding ()
+    void ScoreAdding()
     {
         cooldown += 1f;
         scoreAdded = rbShip.velocity.z * 10;
         LevelManager.Instance.AddGlobalScore(scoreAdded);
     }
 
-    void SetSpeedParticleValue ()
+    void SetSpeedParticleValue()
     {
         cooldownParticle += 1.5f;
         emissionSpeed.rateOverTime = rbShip.velocity.z * 5;
