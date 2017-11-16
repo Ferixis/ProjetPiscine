@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour {
     public GameObject endingBoard;
     public Transform player;
     public GameObject audioObj;
-    public int[] sceneToLoad;
+    //public int[] sceneToLoad;
 
     public static LevelManager Instance { get; private set; }
 
