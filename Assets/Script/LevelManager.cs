@@ -4,9 +4,17 @@ using System;
 
 public class LevelManager : MonoBehaviour {
 
-    private float actualScore;
-    public Text scoreText;
+    // Score //
     
+    public Text scoreText;
+    private float actualScore;
+
+    // LevelEnd //
+
+    public GameObject endingBoard;
+    public Transform player;
+    public GameObject audioObj;
+
     public static LevelManager Instance { get; private set; }
 
     public TimeSpan RunningTime
@@ -32,6 +40,15 @@ public class LevelManager : MonoBehaviour {
         actualScore += addScore;
         scoreText.text = "Score : " + actualScore.ToString("f0");
         //Debug.Log(actualScore);
+    }
+
+    public void LevelEnd ()
+    {
+        Debug.Log("squalalala");
+        Time.timeScale = 0;
+        player.GetComponent<PlayerMoves>().enabled = false;
+        audioObj.SetActive(false);
+        endingBoard.SetActive(true);
     }
 
     }
