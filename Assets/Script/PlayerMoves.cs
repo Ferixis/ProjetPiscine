@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerMoves : MonoBehaviour, ITakeDamage
 {
 
-    // Move //
+    // Moves //
 
     public float spdShip;
     public float maxSpd;
@@ -16,6 +16,8 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     private Rigidbody rbShip;
     private float smoothXVelocity;
     private float smoothYVelocity;
+
+    public Animator animPlayer;
 
     // Shot //
 
@@ -43,6 +45,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
 
     public float boostValue;
     public float ringBonus;
+    
 
     // Score //
 
@@ -109,6 +112,24 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         if (cooldownParticle <= 0)
         {
             SetSpeedParticleValue();
+        }
+
+        if(Input.GetAxis("Horizontal") > 0)
+        {
+            animPlayer.SetBool("Right", true);
+        }
+        else
+        {
+            animPlayer.SetBool("Right", false);
+        }
+
+        if(Input.GetAxis("Horizontal") < 0)
+        {
+            animPlayer.SetBool("Left", true);
+        }
+        else
+        {
+            animPlayer.SetBool("Left", false);
         }
 
     }
@@ -186,8 +207,8 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     void SetSpeedParticleValue()
     {
         cooldownParticle += 1.5f;
-        emissionSpeed.rateOverTime = rbShip.velocity.z * 5;
-        psrSpeed.lengthScale = rbShip.velocity.z * 10;
+        emissionSpeed.rateOverTime = rbShip.velocity.z * 3;
+        psrSpeed.lengthScale = rbShip.velocity.z * 5;
     }
 
 }
