@@ -16,13 +16,12 @@ public class Projectile : MonoBehaviour
 	}
 
 
-    public void TakeDamage(float damage, GameObject instigator)
+    public void TakeDamage(float damage)
     {
-
-        _currentHealth -= damage;
+        Destroy(this.gameObject);
 	}
 
-    void OnCollisionEnter(Collision other)
+    /*void OnCollisionEnter(Collision other)
     {
        
         ITakeDamage Obstacles = other.gameObject.GetComponentInParent<ITakeDamage>();
@@ -36,5 +35,5 @@ public class Projectile : MonoBehaviour
         }
         Destroy(this.gameObject);
 
-    }
+    }*/
 }

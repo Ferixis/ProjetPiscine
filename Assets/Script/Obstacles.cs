@@ -2,29 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Obstacles : MonoBehaviour,ITakeDamage {
+public class Obstacles : IBonus,ITakeDamage {
 
     public int Degats = 1;
     public float obstacleHealth;
     public bool isDestrutible = false;
     public float obstacleValue;
-    private float scoreAdded;
-
-
-
-
-
-
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
 
     void OnCollisionEnter(Collision other)
@@ -39,16 +22,7 @@ public class Obstacles : MonoBehaviour,ITakeDamage {
             player.TakeDamage(Degats);
 
         }
-       /* else if(other.gameObject.tag == "Bullet" && isDestrutible)
-        {
-            obstacleHealth -= 1;
-            if(obstacleHealth <= 0)
-            {
-                scoreAdded = obstacleValue;
-                LevelManager.Instance.AddGlobalScore(scoreAdded);
-                Destroy(this.gameObject);
-            }*/
-        }
+    }
 
 
     public void TakeDamage(int damage)
@@ -58,13 +32,10 @@ public class Obstacles : MonoBehaviour,ITakeDamage {
             obstacleHealth -= 1;
             if (obstacleHealth <= 0)
             {
-                scoreAdded = obstacleValue;
-                //LevelManager.Instance.AddGlobalScore(scoreAdded);
+                LevelManager.Instance.AddGlobalScore(obstacleValue);
                 Destroy(this.gameObject);
             }
         }
-
-
-        }
+    }
 
 }

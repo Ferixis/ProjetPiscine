@@ -22,7 +22,8 @@ GameObject:
   - component: {fileID: 33938167127478448}
   - component: {fileID: 65935124793083650}
   - component: {fileID: 23233354161009848}
-  - component: {fileID: 114985603048702664}
+  - component: {fileID: 114585490006164922}
+  - component: {fileID: 114548822627833840}
   m_Layer: 0
   m_Name: Destructible_Obj
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1360506866280512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.9800005, y: 11.41, z: 295.66}
+  m_LocalPosition: {x: 0.3800003, y: 14.71, z: 295.66}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -94,7 +95,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114985603048702664
+--- !u!114 &114548822627833840
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,10 +103,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1360506866280512}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bcb81c5017d4944397249f58874c3b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 39ffd68a760341941bbe181e76d69c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Degats: 1
-  obstacleHealth: 1
-  isDestrutible: 1
-  obstacleValue: 1500
+  pointAdd: 10
+--- !u!114 &114585490006164922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1360506866280512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0a96c016d44a343814db3d70ebf52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeLost: 1
+  isDestructible: 1

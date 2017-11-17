@@ -39,17 +39,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public GameObject Heart1;       
     public GameObject Heart2;       
     public GameObject Heart3;       
-    private List<GameObject> Hearts;    
-
-    // Ring Boost // 
-
-    public float boostValue;
-    public float ringBonus;
-    
-
-    // Score //
-
-    private float scoreAdded;
+    private List<GameObject> Hearts;  
 
     // Feedback //
 
@@ -68,7 +58,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
 
     private void Start()
     {
-        LevelManager.Instance.AddGlobalScore(scoreAdded);
+        LevelManager.Instance.AddGlobalScore(0f);
         Hearts = new List<GameObject>();
         CurHealth = Basehealth;
         HeartIndex = CurHealth - 1; 
@@ -80,11 +70,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     void FixedUpdate()
     {
         Vector3 newVelocity = rbShip.velocity;
+
         if (rbShip.velocity.z > maxSpd)
         {
             newVelocity.z = maxSpd;
         }
-
         else
         {
             newVelocity.z += spdShip * Time.deltaTime;
@@ -134,11 +124,6 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         }
     }
 
-    void LateUpdate()
-    {
-        //Debug.Log(rbShip.velocity.z);
-    }
-
     void Shoot()
     {
         AudioSource shotSnd = shot.GetComponent<AudioSource>();
@@ -154,11 +139,9 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         Destroy(projectileLeft, 2.0f);
     }
 
-    public void Boost()
+    public void Boost(float boostValue)
     {
-        scoreAdded += ringBonus;
-        spdShip += boostValue;
-        LevelManager.Instance.AddGlobalScore(scoreAdded);
+        maxSpd += boostValue;
         //Debug.Log(spdShip);
     }
 
@@ -168,10 +151,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         CurHealth -= damage;
         Debug.Log("HIT");
 
-        Hearts[HeartIndex].SetActive(false);    
-        HeartIndex--;                           
+        
+        //Hearts[HeartIndex].SetActive(false);    
+       // HeartIndex--;                           
 
-        if (CurHealth <= 0)
+       if (CurHealth <= 0)
         {
             Kill();
         }

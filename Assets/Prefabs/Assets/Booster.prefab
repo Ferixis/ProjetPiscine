@@ -38,7 +38,8 @@ GameObject:
   - component: {fileID: 23365323205062484}
   - component: {fileID: 95778336329254334}
   - component: {fileID: 65733611551402810}
-  - component: {fileID: 114991027772434388}
+  - component: {fileID: 114861633669517136}
+  - component: {fileID: 114714241976170010}
   m_Layer: 0
   m_Name: Ring
   m_TagString: Untagged
@@ -66,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1087043924542782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.159718, y: 7.4412837, z: 56.255035}
+  m_LocalPosition: {x: 1.3, y: 12.1, z: 51.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4056064333704134}
@@ -141,7 +142,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114991027772434388
+--- !u!114 &114714241976170010
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -149,6 +150,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1341061507369900}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9157d6690831bb4429efab9992ba2d09, type: 3}
+  m_Script: {fileID: 11500000, guid: 39ffd68a760341941bbe181e76d69c6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pointAdd: 10
+--- !u!114 &114861633669517136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1341061507369900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90614c2fb6d515748bfddf1f5ec3c017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedAmount: 10
