@@ -49,12 +49,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
 
     // Score //
 
-    private float cooldown;
     private float scoreAdded;
-
-    // Collectable //
-
-    public float itemValue;
 
     // Feedback //
 
@@ -73,16 +68,14 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
 
     private void Start()
     {
+        LevelManager.Instance.AddGlobalScore(scoreAdded);
         Hearts = new List<GameObject>();
         CurHealth = Basehealth;
         HeartIndex = CurHealth - 1; 
         Hearts.Add(Heart1);         
         Hearts.Add(Heart2);
         Hearts.Add(Heart3);
-        cooldown = 0f;
     }
-
-
 
     void FixedUpdate()
     {
@@ -105,12 +98,6 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         newVelocity.y = Mathf.SmoothDamp(newVelocity.y, targetVelocityY, ref smoothXVelocity, Time.deltaTime);
         rbShip.velocity = newVelocity;
 
-        cooldown -= Time.deltaTime;
-        if (cooldown <= 0)
-        {
-            ScoreAdding();
-
-        }
 
         cooldownParticle -= Time.deltaTime;
         if (cooldownParticle <= 0)
@@ -145,8 +132,6 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         {
             Shoot();
         }
-
-
     }
 
     void LateUpdate()
@@ -201,13 +186,6 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
 
     }
 
-    void ScoreAdding()
-    {
-        cooldown += 1f;
-        scoreAdded = rbShip.velocity.z * 10;
-        LevelManager.Instance.AddGlobalScore(scoreAdded);
-    }
-
     void SetSpeedParticleValue()
     {
         cooldownParticle += 1.5f;
@@ -215,10 +193,9 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         psrSpeed.lengthScale = rbShip.velocity.z * 5;
     }
 
-    public void Collectable ()
+    public void Collectable (float itemValue)
     {
-        scoreAdded += itemValue;
-        LevelManager.Instance.AddGlobalScore(scoreAdded);
+        LevelManager.Instance.AddGlobalScore(itemValue);
     }
 }
 
