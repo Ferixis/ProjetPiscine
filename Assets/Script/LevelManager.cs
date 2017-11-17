@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Assertions;
 using System;
+using TMPro;
 
 public class LevelManager : MonoBehaviour {
 
     // Score //
     
-    public Text scoreText;
+    public TextMeshProUGUI scoreText;
     private float actualScore;
 
     // LevelEnd //
@@ -29,8 +31,12 @@ public class LevelManager : MonoBehaviour {
 
     void Awake()
     {
-
+        Assert.IsNotNull(scoreText) ;
+        Assert.IsNotNull(endingBoard);
+        Assert.IsNotNull(player);
+        Assert.IsNotNull(audioObj);
         Instance = this;
+
     }
 	// Use this for initialization
 	void Start () {
@@ -40,7 +46,7 @@ public class LevelManager : MonoBehaviour {
 	public void AddGlobalScore (float addScore)
     {
         actualScore += addScore;
-        scoreText.text = "Score : " + actualScore.ToString("f0");
+        scoreText.text = actualScore.ToString("f0");
         //Debug.Log(actualScore);
     }
 
