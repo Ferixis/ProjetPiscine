@@ -48,6 +48,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public ParticleSystem.EmissionModule emissionSpeed;
     private float cooldownParticle;
 
+    // Fuel Gauge //
+
+    public Image fuelGauge;
+    public float fuelLostRate;
+
     void Awake()
     {
         rbShip = GetComponent<Rigidbody>();
@@ -122,6 +127,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         {
             Shoot();
         }
+            FuelGauge();
     }
 
     void Shoot()
@@ -180,6 +186,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public void Collectable (float itemValue)
     {
         LevelManager.Instance.AddGlobalScore(itemValue);
+    }
+
+    public void FuelGauge ()
+    {
+        fuelGauge.fillAmount -= 1.0f / fuelLostRate * Time.deltaTime;
     }
 }
 
