@@ -15,7 +15,7 @@ public class LevelManager : MonoBehaviour {
     // LevelEnd //
 
     public GameObject endingBoard;
-    public Transform player;
+    public PlayerMoves player;
     public GameObject audioObj;
     //public int[] sceneToLoad;
 
@@ -54,7 +54,7 @@ public class LevelManager : MonoBehaviour {
     {
         Debug.Log("squalalala");
         Time.timeScale = 0;
-        player.GetComponent<PlayerMoves>().enabled = false;
+        player.enabled = false;
         audioObj.SetActive(false);
         endingBoard.SetActive(true);
         //SceneManager.LoadScene();
