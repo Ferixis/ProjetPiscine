@@ -53,6 +53,8 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public float fuelLost;
     private float currentFuelTime;
 
+ 
+
     void Awake()
     {
         rbShip = GetComponent<Rigidbody>();
@@ -199,6 +201,12 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public void Collectable (float itemValue)
     {
         LevelManager.Instance.AddGlobalScore(itemValue);
+    }
+
+    public void FuelBoost(float fuelGained)
+    {
+        currentFuel += fuelGained;
+ 
     }
 }
 
