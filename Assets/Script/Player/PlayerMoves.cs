@@ -33,7 +33,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
 
     // Health //
 
-    public int Basehealth;          
+    public int Basehealth;
     private int CurHealth;          
     private int HeartIndex;         
 
@@ -186,6 +186,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     private void Kill()
     {
         CameraManager.Instance.UnParentCamera();
+        CameraManager.Instance.PlayDeathSound();
         Destroy(this.gameObject);
         Debug.Log("Death");
 

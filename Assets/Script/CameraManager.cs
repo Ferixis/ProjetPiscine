@@ -74,6 +74,10 @@ public class CameraManager : MonoBehaviour {
             cm.transform.parent = null;
 
         }
-        
+    }
+
+    public void PlayDeathSound()
+    {
+        GetComponent<AudioSource>().Play();
     }
 }
