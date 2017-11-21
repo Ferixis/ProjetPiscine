@@ -51,7 +51,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     // Fuel Gauge //
 
     public Image fuelGauge;
-    public float fuelLostRate;
+    public float currentFuel;
+    public float maxFuel;
+    public float fuelTime;
+    public float fuelLost;
+    private float currentFuelTime;
 
     void Awake()
     {
@@ -59,6 +63,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         psSpeed = GetComponent<ParticleSystem>();
         emissionSpeed = psSpeed.emission;
         psrSpeed = GetComponent<ParticleSystemRenderer>();
+        currentFuelTime = fuelTime;
     }
 
     private void Start()
@@ -70,6 +75,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         Hearts.Add(Heart1);         
         Hearts.Add(Heart2);
         Hearts.Add(Heart3);
+        currentFuel = maxFuel;
     }
 
     void FixedUpdate()
@@ -127,7 +133,23 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         {
             Shoot();
         }
-            FuelGauge();
+        
+        if(currentFuelTime > 0)
+        {
+            currentFuelTime -= Time.deltaTime;
+            
+        }
+        else if(currentFuelTime <= 0)
+        {
+            currentFuel -= fuelLost;
+            currentFuelTime = fuelTime;
+            fuelGauge.fillAmount = currentFuel/maxFuel;
+            if(currentFuel <=0)
+            {
+                Kill();
+            }
+        }
+    
     }
 
     void Shoot()
@@ -186,11 +208,6 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public void Collectable (float itemValue)
     {
         LevelManager.Instance.AddGlobalScore(itemValue);
-    }
-
-    public void FuelGauge ()
-    {
-        fuelGauge.fillAmount -= 1.0f / fuelLostRate * Time.deltaTime;
     }
 }
 
