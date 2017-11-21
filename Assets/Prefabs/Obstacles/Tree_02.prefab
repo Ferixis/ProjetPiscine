@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 23555476578294680}
   - component: {fileID: 64419322720196332}
   - component: {fileID: 114492855094955822}
+  - component: {fileID: 114277537107723278}
   m_Layer: 0
   m_Name: Mesh1_Tree_Model
   m_TagString: Untagged
@@ -122,10 +123,23 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
+  m_Convex: 1
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 03e6093920d64bb419204a7cba8b857d, type: 3}
+--- !u!114 &114277537107723278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503892454823778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0a96c016d44a343814db3d70ebf52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeLost: 1
+  isDestructible: 0
 --- !u!114 &114492855094955822
 MonoBehaviour:
   m_ObjectHideFlags: 1

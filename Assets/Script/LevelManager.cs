@@ -56,7 +56,11 @@ public class LevelManager : MonoBehaviour {
         Time.timeScale = 0;
         player.enabled = false;
         audioObj.SetActive(false);
-        endingBoard.SetActive(true);
+        if(endingBoard != null)
+        {
+            endingBoard.SetActive(true);
+        }
+        
         //SceneManager.LoadScene();
     }
 

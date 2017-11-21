@@ -36,10 +36,6 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public int Basehealth;          
     private int CurHealth;          
     private int HeartIndex;         
-    public GameObject Heart1;       
-    public GameObject Heart2;       
-    public GameObject Heart3;       
-    private List<GameObject> Hearts;  
 
     // Feedback //
 
@@ -69,12 +65,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     private void Start()
     {
         LevelManager.Instance.AddGlobalScore(0f);
-        Hearts = new List<GameObject>();
         CurHealth = Basehealth;
-        HeartIndex = CurHealth - 1; 
-        Hearts.Add(Heart1);         
-        Hearts.Add(Heart2);
-        Hearts.Add(Heart3);
         currentFuel = maxFuel;
     }
 
