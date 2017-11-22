@@ -24,7 +24,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public GameObject projectileToShoot;
     public float projectileSpd;
     public Transform rightCanonSpawn;
-    public Transform leftCanonSpawn;
+    //public Transform leftCanonSpawn;
     public GameObject shot;
     private AudioClip shotSnd;
 
@@ -170,10 +170,10 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         shotSnd.Play();
 
         projectileRight = Instantiate(projectileToShoot, rightCanonSpawn.position, rightCanonSpawn.rotation);
-        projectileLeft = Instantiate(projectileToShoot, leftCanonSpawn.position, leftCanonSpawn.rotation);
+        //projectileLeft = Instantiate(projectileToShoot, leftCanonSpawn.position, leftCanonSpawn.rotation);
 
         projectileRight.GetComponent<Rigidbody>().velocity = transform.forward * rbShip.velocity.z * projectileSpd;
-        projectileLeft.GetComponent<Rigidbody>().velocity = transform.forward * rbShip.velocity.z * projectileSpd;
+        //projectileLeft.GetComponent<Rigidbody>().velocity = transform.forward * rbShip.velocity.z * projectileSpd;
 
         Destroy(projectileRight, 2.0f);
         Destroy(projectileLeft, 2.0f);
