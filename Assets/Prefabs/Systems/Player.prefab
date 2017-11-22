@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 92807978993243436}
   - component: {fileID: 124666278430523260}
   - component: {fileID: 81252960985681278}
+  - component: {fileID: 114164447112996516}
   m_Layer: 10
   m_Name: DiveCam
   m_TagString: MainCamera
@@ -711,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076492271699716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.2, y: -21.9, z: 91.4867}
+  m_LocalPosition: {x: 36.6, y: -18.9, z: -104.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4931738276733808}
@@ -978,8 +979,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1657398921014158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.220844, y: 26.288929, z: -46.2967}
-  m_LocalScale: {x: 1.29755, y: 1.29755, z: 1.29755}
+  m_LocalPosition: {x: -28.218, y: 26.32, z: -46.231}
+  m_LocalScale: {x: 1.6335236, y: 1.6335237, z: 1.6335237}
   m_Children:
   - {fileID: 4507041224437006}
   - {fileID: 4394727369417534}
@@ -2145,6 +2146,18 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114164447112996516
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146788348462024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: dae7172b98015964aa3168c0c362f2ac, type: 2}
 --- !u!114 &114785712610286420
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2161,6 +2174,7 @@ MonoBehaviour:
   straffMaxSpeed: 16
   straffTime: 5
   animPlayer: {fileID: 95005153213521020}
+  animUI: {fileID: 0}
   projectileToShoot: {fileID: 1553744080704550, guid: 56f839bad76d9b0488acc06e2dceb7cc,
     type: 2}
   projectileSpd: 20
@@ -2168,14 +2182,19 @@ MonoBehaviour:
   leftCanonSpawn: {fileID: 4496103593473230}
   shot: {fileID: 1460682300267606}
   Basehealth: 1
-  Heart1: {fileID: 0}
-  Heart2: {fileID: 0}
-  Heart3: {fileID: 0}
-  boostValue: 3
-  ringBonus: 1000
-  itemValue: 10000
   psSpeed: {fileID: 198671049425257390}
   psrSpeed: {fileID: 199181405127626890}
+  explosionEffect: {fileID: 1690083886921830, guid: ec862c0e35cdd114580558dad437f3d8,
+    type: 2}
+  graphicSpawn: {fileID: 4931738276733808}
+  jaugeColorStart: {r: 0.08275862, g: 0.7058823, b: 0, a: 1}
+  jaugeColorMid: {r: 0.88235295, g: 0.8215011, b: 0, a: 1}
+  jaugeColorEnd: {r: 0.77205884, g: 0, b: 0, a: 1}
+  fuelGauge: {fileID: 0}
+  currentFuel: 100
+  maxFuel: 100
+  fuelTime: 5
+  fuelLost: 5
 --- !u!124 &124517557152861412
 Behaviour:
   m_ObjectHideFlags: 1
@@ -2256,7 +2275,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 9925335
+  randomSeed: 1815854849
   InitialModule:
     serializedVersion: 3
     enabled: 1

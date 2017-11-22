@@ -189,7 +189,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     {
 
         CurHealth -= damage;
-        Debug.Log("HIT");
+        //Debug.Log("HIT");
 
         
         //Hearts[HeartIndex].SetActive(false);    
