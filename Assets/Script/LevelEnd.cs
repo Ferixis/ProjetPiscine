@@ -6,6 +6,6 @@ public class LevelEnd : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
     {
-        LevelManager.Instance.LevelEnd();
+        LevelManager.Instance.LevelEnd(false);
     }
 }

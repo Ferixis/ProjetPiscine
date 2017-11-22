@@ -17,7 +17,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     private float smoothXVelocity;
     private float smoothYVelocity;
 
-    public Animator animPlayer;
+    public Animator animPlayer, animUI;
 
     // Shot //
 
@@ -42,8 +42,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public ParticleSystem psSpeed;
     public ParticleSystemRenderer psrSpeed;
     public ParticleSystem.EmissionModule emissionSpeed;
+    public GameObject explosionEffect;
+    public Transform graphicSpawn;
     private float cooldownParticle;
 
+    public Color jaugeColorStart, jaugeColorMid, jaugeColorEnd;
     // Fuel Gauge //
 
     public Image fuelGauge;
@@ -136,11 +139,27 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         {
             currentFuel -= fuelLost;
             currentFuelTime = fuelTime;
-            fuelGauge.fillAmount = currentFuel/maxFuel;
+            fuelGauge.fillAmount = Mathf.Max(0,currentFuel/maxFuel);
             if(currentFuel <=0)
             {
                 Kill();
             }
+        }
+
+        if(fuelGauge.fillAmount >= 0.8f)
+        {
+            fuelGauge.color = jaugeColorStart;
+            animUI.SetBool("CriticalState", false);
+        }
+        else if(fuelGauge.fillAmount >= 0.4)
+        {
+            fuelGauge.color = jaugeColorMid;
+            animUI.SetBool("CriticalState", false);
+        }
+        else
+        {
+            fuelGauge.color = jaugeColorEnd;
+            animUI.SetBool("CriticalState", true);
         }
     
     }
@@ -187,6 +206,9 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     {
         CameraManager.Instance.UnParentCamera();
         CameraManager.Instance.PlayDeathSound();
+        LevelManager.Instance.LevelEnd(true);
+        GameObject explosion = Instantiate(explosionEffect, graphicSpawn.position, graphicSpawn.rotation);
+        explosion.transform.parent = null;
         Destroy(this.gameObject);
         Debug.Log("Death");
 
@@ -207,7 +229,14 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     public void FuelBoost(float fuelGained)
     {
         currentFuel += fuelGained;
- 
+
+        if(currentFuel > maxFuel)
+        {
+            currentFuel = maxFuel;
+        }
+
+        fuelGauge.fillAmount = Mathf.Max(0, currentFuel / maxFuel);
+
     }
 }
 

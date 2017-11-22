@@ -10,6 +10,6 @@ public class AddingSpeed : IBonus {
     {
         player.Boost(speedAmount);
         Destroy(this.gameObject);
-        Debug.Log("POINT UP");
+        //Debug.Log("POINT UP");
     }
 }

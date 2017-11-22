@@ -10,14 +10,15 @@ public class LevelManager : MonoBehaviour {
     // Score //
     
     public TextMeshProUGUI scoreText;
+
+    public float scoreIncrementFrame = 1f ;
     private float actualScore;
 
     // LevelEnd //
 
-    public GameObject endingBoard;
-    public PlayerMoves player;
-    public GameObject audioObj;
-    //public int[] sceneToLoad;
+    public GameObject endPanel;
+    public TextMeshProUGUI endText, endScoreText;
+    //public PlayerMoves player;
 
     public static LevelManager Instance { get; private set; }
 
@@ -32,9 +33,9 @@ public class LevelManager : MonoBehaviour {
     void Awake()
     {
         Assert.IsNotNull(scoreText) ;
-        Assert.IsNotNull(endingBoard);
-        Assert.IsNotNull(player);
-        Assert.IsNotNull(audioObj);
+        Assert.IsNotNull(endPanel);
+        //Assert.IsNotNull(player);
+        //Assert.IsNotNull(audioObj);
         Instance = this;
 
     }
@@ -43,26 +44,44 @@ public class LevelManager : MonoBehaviour {
 
         _startedTime = DateTime.UtcNow;
 	}
-	public void AddGlobalScore (float addScore)
+
+
+
+    public void AddGlobalScore (float addScore)
     {
         actualScore += addScore;
         scoreText.text = actualScore.ToString("f0");
         //Debug.Log(actualScore);
     }
 
-    public void LevelEnd ()
+    public void LevelEnd (bool isDead)
     {
-        Debug.Log("squalalala");
-        Time.timeScale = 0;
-        player.enabled = false;
-        audioObj.SetActive(false);
-        if(endingBoard != null)
-        {
-            endingBoard.SetActive(true);
-        }
+        //Time.timeScale = 0;
         
-        //SceneManager.LoadScene();
+        //player.enabled = false;
+        //audioObj.SetActive(false);
+        if(endPanel != null && !isDead)
+        {
+            endText.text = "Félicitation !"; 
+        }
+        else if(endPanel != null && isDead)
+        {
+            endText.text = "Hors course !";
+        }
+
+        endScoreText.text = "Score : " + actualScore.ToString("");
+        endPanel.SetActive(true);
     }
 
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+}
 
