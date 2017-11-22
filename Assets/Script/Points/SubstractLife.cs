@@ -6,6 +6,7 @@ public class SubstractLife : ICollision
 {
     public int lifeLost;
     public bool isDestructible = false;
+    public GameObject explosionEffect;
 
     public override void ApplyEffect(PlayerMoves player)
     {
@@ -19,6 +20,8 @@ public class SubstractLife : ICollision
 
         if(isDestructible)
         {
+            GetComponent<AudioSource>().Play();
+            Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
     }
