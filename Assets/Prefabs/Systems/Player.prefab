@@ -356,7 +356,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1657398921014158
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076492271699716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.5, y: -16.21, z: 7.5}
+  m_LocalPosition: {x: 36.6, y: -14.2, z: -153.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4931738276733808}
@@ -873,7 +873,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336155934449076}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.49, y: -1.33, z: 1.52}
+  m_LocalPosition: {x: 0, y: -1.33, z: 1.52}
   m_LocalScale: {x: 0.24992943, y: 0.24992943, z: 0.24992943}
   m_Children: []
   m_Father: {fileID: 4557775174981974}
@@ -1867,8 +1867,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3.022388, y: 0.9999999, z: 1.3881073}
-  m_Center: {x: -0.00848368, y: 0, z: -0.19405434}
+  m_Size: {x: 2.2878096, y: 0.7528366, z: 2.0615087}
+  m_Center: {x: 0.031721402, y: 0.020263024, z: -0.5140741}
 --- !u!65 &65685875134295136
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1922,7 +1922,8 @@ AudioSource:
   m_GameObject: {fileID: 1460682300267606}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243105157857628806, guid: 3317c58d1c996514c93672c07d1d1e34,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: bb96ca8c2f711fc46a4c3764b63c3d96, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2002,7 +2003,8 @@ AudioSource:
   m_GameObject: {fileID: 1090406254875802}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 243105157857628806, guid: 3317c58d1c996514c93672c07d1d1e34,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: 5f4b85c5a4cdfbc4981f501d32c2e165, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.139
@@ -2178,14 +2180,9 @@ MonoBehaviour:
   projectileToShoot: {fileID: 1553744080704550, guid: 56f839bad76d9b0488acc06e2dceb7cc,
     type: 2}
   projectileSpd: 20
-  rightCanonSpawn: {fileID: 4003498235737144}
+  rightCanonSpawn: {fileID: 4496103593473230}
   shot: {fileID: 1460682300267606}
   Basehealth: 1
-  heartUI:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  startLife: 3
   psSpeed: {fileID: 198671049425257390}
   psrSpeed: {fileID: 199181405127626890}
   explosionEffect: {fileID: 1690083886921830, guid: ec862c0e35cdd114580558dad437f3d8,
@@ -2197,7 +2194,7 @@ MonoBehaviour:
   fuelGauge: {fileID: 0}
   currentFuel: 100
   maxFuel: 100
-  fuelTime: 5
+  fuelTime: 100
   fuelLost: 5
 --- !u!124 &124517557152861412
 Behaviour:
@@ -2279,7 +2276,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 306008416
+  randomSeed: 1857985944
   InitialModule:
     serializedVersion: 3
     enabled: 1

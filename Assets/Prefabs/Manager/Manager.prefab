@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41911763, g: 0.41911763, b: 0.41911763, a: 0.659}
+  m_Color: {r: 0.41911763, g: 0.41911763, b: 0.41911763, a: 0.891}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114465359005832978}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -1899,6 +1899,7 @@ MonoBehaviour:
   - {fileID: 1306254911772036}
   - {fileID: 1003512806288158}
   - {fileID: 1334100779016072}
+  - {fileID: 1212687016179700}
   tutorielHolder: {fileID: 1092699666895950}
 --- !u!114 &114468623119870950
 MonoBehaviour:
@@ -2229,7 +2230,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114465359005832978}
         m_MethodName: ReloadLevel
         m_Mode: 1
         m_Arguments:
