@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 33523644660936998}
   - component: {fileID: 23555476578294680}
   - component: {fileID: 64419322720196332}
-  - component: {fileID: 114492855094955822}
   - component: {fileID: 114277537107723278}
   m_Layer: 0
   m_Name: Mesh1_Tree_Model
@@ -65,14 +64,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1499827749994920}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.001, y: 5.98, z: -114.09}
-  m_LocalScale: {x: 5.57549, y: 5.5754895, z: 5.5754895}
+  m_LocalRotation: {x: -0, y: -0.3910258, z: -0, w: 0.92037976}
+  m_LocalPosition: {x: 83.243866, y: 5.78, z: 477.86615}
+  m_LocalScale: {x: 5.575491, y: 5.5754895, z: 5.5754905}
   m_Children:
   - {fileID: 4281031266449470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -46.037003, z: 0}
 --- !u!23 &23555476578294680
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -140,18 +139,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeLost: 1
   isDestructible: 0
---- !u!114 &114492855094955822
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1503892454823778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bcb81c5017d4944397249f58874c3b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Degats: 1
-  obstacleHealth: 0
-  isDestrutible: 0
-  obstacleValue: 0
+  explosionEffect: {fileID: 0}

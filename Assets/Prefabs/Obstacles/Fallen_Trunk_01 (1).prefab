@@ -21,6 +21,8 @@ GameObject:
   - component: {fileID: 4902325599066056}
   - component: {fileID: 33119282763409702}
   - component: {fileID: 23998260583654548}
+  - component: {fileID: 64424000293636212}
+  - component: {fileID: 114157037819355064}
   m_Layer: 0
   m_Name: Mesh1_Fallen_Trunk_Model
   m_TagString: Untagged
@@ -36,8 +38,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4335654185365716}
-  - component: {fileID: 65723026788300316}
-  - component: {fileID: 114402526330091408}
   m_Layer: 0
   m_Name: Fallen_Trunk_01 (1)
   m_TagString: Untagged
@@ -51,14 +51,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103189808340268}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 88.028, y: 3.43, z: 350.97}
-  m_LocalScale: {x: 14.659555, y: 10.362699, z: 10.362699}
+  m_LocalRotation: {x: -0, y: -0.9721143, z: -0, w: -0.23450764}
+  m_LocalPosition: {x: 73.43, y: 3.75, z: -9.45}
+  m_LocalScale: {x: 8.649141, y: 6.11399, z: 6.11399}
   m_Children:
   - {fileID: 4902325599066056}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -207.125, z: 0}
 --- !u!4 &4902325599066056
 Transform:
   m_ObjectHideFlags: 1
@@ -112,24 +112,26 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1084430839153186}
   m_Mesh: {fileID: 4300000, guid: a54a3840ebde1fa44ae4f2027cc9429c, type: 3}
---- !u!65 &65723026788300316
-BoxCollider:
+--- !u!64 &64424000293636212
+MeshCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1103189808340268}
+  m_GameObject: {fileID: 1084430839153186}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.4092264, y: 0.84811753, z: 1.0658003}
-  m_Center: {x: -1.061168, y: 0.34799203, z: -0.49629667}
---- !u!114 &114402526330091408
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: a54a3840ebde1fa44ae4f2027cc9429c, type: 3}
+--- !u!114 &114157037819355064
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1103189808340268}
+  m_GameObject: {fileID: 1084430839153186}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c0a96c016d44a343814db3d70ebf52b, type: 3}
@@ -137,3 +139,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeLost: 1
   isDestructible: 0
+  explosionEffect: {fileID: 0}

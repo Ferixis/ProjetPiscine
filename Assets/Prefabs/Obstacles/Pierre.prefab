@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33024760432880822}
   - component: {fileID: 23148821589138300}
   - component: {fileID: 64161886455881890}
+  - component: {fileID: 114494834546934106}
   m_Layer: 0
   m_Name: Mesh1_Rock_1_Model
   m_TagString: Untagged
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1675205513824794}
   m_LocalRotation: {x: -0, y: 0.47437418, z: -0, w: 0.8803234}
-  m_LocalPosition: {x: 13.22, y: 3.47, z: 300.25}
+  m_LocalPosition: {x: 78.92, y: 3.47, z: 300.25}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 4985549532571376}
@@ -124,3 +125,17 @@ MeshCollider:
   m_InflateMesh: 0
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 7c77c455beaeee649bd54f8df5f3af77, type: 3}
+--- !u!114 &114494834546934106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1031826599891788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c0a96c016d44a343814db3d70ebf52b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeLost: 1
+  isDestructible: 0
+  explosionEffect: {fileID: 0}
