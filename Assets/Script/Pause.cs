@@ -10,7 +10,7 @@ public class Pause : MonoBehaviour {
     public bool pause = false;
     public Transform player;
     public GameObject pauseObj;
-    public GameObject audioObj;
+    //public GameObject audioObj;
 
     // Use this for initialization
     void Start () {
@@ -32,7 +32,7 @@ public class Pause : MonoBehaviour {
         {
             Time.timeScale = 0;
             player.GetComponent<PlayerMoves>().enabled = false;
-            audioObj.SetActive(false);
+           // audioObj.SetActive(false);
             pauseObj.SetActive(true);
             pause = true;
         }
@@ -40,7 +40,7 @@ public class Pause : MonoBehaviour {
         {
             Time.timeScale = 1;
             player.GetComponent<PlayerMoves>().enabled = true;
-            audioObj.SetActive(true);
+            //audioObj.SetActive(true);
             pauseObj.SetActive(false);
             pause = false;
         }
