@@ -1910,6 +1910,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114343555678641076, guid: be848601d3de2494e900b6ed25e6b55b,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114343555678641076, guid: be848601d3de2494e900b6ed25e6b55b,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114137679788894838, guid: be848601d3de2494e900b6ed25e6b55b,
         type: 2}
       propertyPath: player

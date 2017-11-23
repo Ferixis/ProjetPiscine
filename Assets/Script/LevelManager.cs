@@ -20,6 +20,12 @@ public class LevelManager : MonoBehaviour {
     public TextMeshProUGUI endText, endScoreText;
     //public PlayerMoves player;
 
+    [Header("Tutoriel")]
+
+    public GameObject[] tutorielText;
+    public GameObject tutorielHolder;
+    private int idx = 0;
+
     public static LevelManager Instance { get; private set; }
 
     public TimeSpan RunningTime
@@ -71,6 +77,18 @@ public class LevelManager : MonoBehaviour {
 
         endScoreText.text = "Score : " + actualScore.ToString("");
         endPanel.SetActive(true);
+    }
+
+    public void ShowTuto()
+    {
+        tutorielText[idx].SetActive(false);
+        idx++;
+        tutorielText[idx].SetActive(true);
+    }
+
+    public void EndTuto()
+    {
+        tutorielHolder.SetActive(false);
     }
 
     public void ReloadLevel()
