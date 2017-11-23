@@ -2645,16 +2645,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 114850787337136434, guid: 9ec82d367b5bcbd4193b273a448d857e,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114850787337136434, guid: 9ec82d367b5bcbd4193b273a448d857e,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114477541216099382, guid: 9ec82d367b5bcbd4193b273a448d857e,
         type: 2}
       propertyPath: cameras.Array.data[0]
@@ -2680,11 +2670,6 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 1834902870}
-    - target: {fileID: 114479248377803734, guid: 9ec82d367b5bcbd4193b273a448d857e,
-        type: 2}
-      propertyPath: audioObj
-      value: 
-      objectReference: {fileID: 1719311196}
     - target: {fileID: 114682670812033948, guid: 9ec82d367b5bcbd4193b273a448d857e,
         type: 2}
       propertyPath: m_havePropertiesChanged
@@ -2711,6 +2696,16 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114395340113540248, guid: 9ec82d367b5bcbd4193b273a448d857e,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114850787337136434, guid: 9ec82d367b5bcbd4193b273a448d857e,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114850787337136434, guid: 9ec82d367b5bcbd4193b273a448d857e,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
@@ -4653,11 +4648,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66,
     type: 2}
   m_PrefabInternal: {fileID: 726731500}
---- !u!1 &1719311196 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1662657696858844, guid: b6f90f78fe60ca945a6bf26b8f567f39,
-    type: 2}
-  m_PrefabInternal: {fileID: 1380239249}
 --- !u!4 &1723991360 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4066076406368714, guid: f0936214034db34419f10dc038a4fc66,
