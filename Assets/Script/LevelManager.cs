@@ -52,7 +52,8 @@ public class LevelManager : MonoBehaviour {
 	void Start () {
 
         _startedTime = DateTime.UtcNow;
-	}
+        Cursor.visible = false;
+    }
 
     private void Update()
     {
@@ -81,6 +82,7 @@ public class LevelManager : MonoBehaviour {
         endScoreText.text = "Score : " + actualScore.ToString("");
         endPanel.SetActive(true);
         EventSystem.current.SetSelectedGameObject(retryButton);
+        Cursor.visible = true;
     }
 
     public void NextStepTuto()

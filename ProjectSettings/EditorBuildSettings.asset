@@ -6,8 +6,5 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ProtoLC.unity
-    guid: 05bd50d3577e5a546923505969ecd5da
-  - enabled: 1
-    path: Assets/Scenes/LD_Kevin.unity
-    guid: f5c40152bbb7e3d45b7022c5305f2d77
+    path: Assets/Scenes/Scene_Final.unity
+    guid: 40f1c9d13b3bbac498e084042e5226f2

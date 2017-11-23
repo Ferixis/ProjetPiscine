@@ -5,6 +5,7 @@ using UnityEngine;
 public class SubstractLife : ICollision
 {
     public int lifeLost;
+    public float pointGet = 20f;
     public bool isDestructible = false;
     public GameObject explosionEffect;
 
@@ -24,7 +25,7 @@ public class SubstractLife : ICollision
             {
                 AudioManager.Instance.PlayExplosion();
             }
-
+            LevelManager.Instance.AddGlobalScore(pointGet);
             Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }

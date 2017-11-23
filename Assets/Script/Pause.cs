@@ -38,6 +38,7 @@ public class Pause : MonoBehaviour {
             pauseObj.SetActive(true);
             pause = true;
             EventSystem.current.SetSelectedGameObject(continueButton);
+            Cursor.visible = true;
         }
         else
         {
@@ -47,6 +48,7 @@ public class Pause : MonoBehaviour {
             //audioObj.SetActive(true);
             pauseObj.SetActive(false);
             pause = false;
+            Cursor.visible = false;
         }
     }
 }

@@ -11,6 +11,6 @@ public class AddingScore : IBonus {
         player.Collectable(pointAdd);
         AudioManager.Instance.PlayPowerUp();
         Destroy(this.gameObject);
-        Debug.Log("POINT UP");
+        //Debug.Log("POINT UP");
     }
 }

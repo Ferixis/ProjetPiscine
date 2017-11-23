@@ -30,7 +30,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     private AudioClip shotSnd;
 
     private GameObject projectileRight;
-    private GameObject projectileLeft;
+    //private GameObject projectileLeft;
 
     // Health //
 
@@ -179,7 +179,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         //projectileLeft.GetComponent<Rigidbody>().velocity = transform.forward * rbShip.velocity.z * projectileSpd;
 
         Destroy(projectileRight, 2.0f);
-        Destroy(projectileLeft, 2.0f);
+        //Destroy(projectileLeft, 2.0f);
     }
 
     public void Boost(float boostValue)
