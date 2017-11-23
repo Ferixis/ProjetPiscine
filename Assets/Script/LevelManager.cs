@@ -8,8 +8,9 @@ using TMPro;
 public class LevelManager : MonoBehaviour {
 
     // Score //
-    
-    public TextMeshProUGUI scoreText;
+
+    public PlayerMoves player;
+    public TextMeshProUGUI scoreText,speedText;
 
     public float scoreIncrementFrame = 1f ;
     private float actualScore;
@@ -51,7 +52,10 @@ public class LevelManager : MonoBehaviour {
         _startedTime = DateTime.UtcNow;
 	}
 
-
+    private void Update()
+    {
+        speedText.text = player.ReturnVelocity().ToString("F0") + "KM/H"; 
+    }
 
     public void AddGlobalScore (float addScore)
     {

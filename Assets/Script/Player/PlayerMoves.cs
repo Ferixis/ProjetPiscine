@@ -17,6 +17,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     private float smoothXVelocity;
     private float smoothYVelocity;
 
+    private float currentVelocity;
     public Animator animPlayer, animUI;
 
     // Shot //
@@ -119,6 +120,8 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         {
             animPlayer.SetBool("Left", false);
         }
+
+        currentVelocity = newVelocity.z;
 
     }
 
@@ -238,6 +241,11 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
 
         fuelGauge.fillAmount = Mathf.Max(0, currentFuel / maxFuel);
 
+    }
+
+    public float ReturnVelocity()
+    {
+       return currentVelocity*3;
     }
 }
 
