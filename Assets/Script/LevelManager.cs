@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour {
 
     // LevelEnd //
 
-    public GameObject endPanel;
+    public GameObject endPanel, retryButton;
     public TextMeshProUGUI endText, endScoreText;
     //public PlayerMoves player;
 
@@ -66,10 +66,6 @@ public class LevelManager : MonoBehaviour {
 
     public void LevelEnd (bool isDead)
     {
-        //Time.timeScale = 0;
-        
-        //player.enabled = false;
-        //audioObj.SetActive(false);
         if(endPanel != null && !isDead)
         {
             endText.text = "Félicitation !"; 
@@ -79,6 +75,7 @@ public class LevelManager : MonoBehaviour {
             endText.text = "Hors course !";
         }
 
+        
         endScoreText.text = "Score : " + actualScore.ToString("");
         endPanel.SetActive(true);
     }
