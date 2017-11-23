@@ -2171,8 +2171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 888a881483c40c9408ac08522fcdb527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spdShip: 4
-  maxSpd: 15
+  spdShip: 5
+  maxSpd: 23
   straffMaxSpeed: 16
   straffTime: 5
   animPlayer: {fileID: 95005153213521020}
@@ -2276,7 +2276,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1857985944
+  randomSeed: -545456424
   InitialModule:
     serializedVersion: 3
     enabled: 1
