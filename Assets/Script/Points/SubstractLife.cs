@@ -20,7 +20,11 @@ public class SubstractLife : ICollision
 
         if(isDestructible)
         {
-            GetComponent<AudioSource>().Play();
+            if(AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayExplosion();
+            }
+
             Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(this.gameObject);
         }
