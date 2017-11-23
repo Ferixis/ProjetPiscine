@@ -79,14 +79,18 @@ public class LevelManager : MonoBehaviour {
         endPanel.SetActive(true);
     }
 
-    public void ShowTuto()
+    public void NextStepTuto()
     {
+        if(!tutorielHolder.activeSelf)
+        {
+            tutorielHolder.SetActive(true);
+        }
         tutorielText[idx].SetActive(false);
         idx++;
         tutorielText[idx].SetActive(true);
     }
 
-    public void EndTuto()
+    public void UnShowTuto()
     {
         tutorielHolder.SetActive(false);
     }

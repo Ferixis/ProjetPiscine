@@ -712,7 +712,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1076492271699716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.6, y: -18.9, z: -104.5}
+  m_LocalPosition: {x: 35.5, y: -16.21, z: 7.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4931738276733808}
@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spdShip: 4
-  maxSpd: 20
+  maxSpd: 15
   straffMaxSpeed: 16
   straffTime: 5
   animPlayer: {fileID: 95005153213521020}
@@ -2179,9 +2179,13 @@ MonoBehaviour:
     type: 2}
   projectileSpd: 20
   rightCanonSpawn: {fileID: 4003498235737144}
-  leftCanonSpawn: {fileID: 4496103593473230}
   shot: {fileID: 1460682300267606}
   Basehealth: 1
+  heartUI:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  startLife: 3
   psSpeed: {fileID: 198671049425257390}
   psrSpeed: {fileID: 199181405127626890}
   explosionEffect: {fileID: 1690083886921830, guid: ec862c0e35cdd114580558dad437f3d8,
@@ -2275,7 +2279,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 1815854849
+  randomSeed: 306008416
   InitialModule:
     serializedVersion: 3
     enabled: 1
