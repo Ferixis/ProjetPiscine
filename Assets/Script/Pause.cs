@@ -26,7 +26,7 @@ public class Pause : MonoBehaviour {
         }
     }
 
-    void PauseMode()
+    public void PauseMode()
     {
         if (pause == false)
         {
