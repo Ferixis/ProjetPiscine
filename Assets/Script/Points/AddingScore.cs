@@ -8,9 +8,8 @@ public class AddingScore : IBonus {
 
     public override void ApplyBonus(PlayerMoves player)
     {
-        //GetComponent<AudioSource>().pitch = Random.Range(-0.2f, 0.2f);
-       // GetComponent<AudioSource>().Play();
         player.Collectable(pointAdd);
+        AudioManager.Instance.PlayPowerUp();
         Destroy(this.gameObject);
         Debug.Log("POINT UP");
     }
