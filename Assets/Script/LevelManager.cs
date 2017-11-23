@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Assertions;
 using System;
 using TMPro;
+using UnityEngine.EventSystems;
+
 
 public class LevelManager : MonoBehaviour {
 
@@ -78,6 +80,7 @@ public class LevelManager : MonoBehaviour {
         
         endScoreText.text = "Score : " + actualScore.ToString("");
         endPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(retryButton);
     }
 
     public void NextStepTuto()

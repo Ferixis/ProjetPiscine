@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Pause : MonoBehaviour {
 
@@ -9,7 +10,8 @@ public class Pause : MonoBehaviour {
 
     public bool pause = false;
     public Transform player;
-    public GameObject pauseObj;
+    public GameObject pauseObj,continueButton;
+
     //public GameObject audioObj;
 
     // Use this for initialization
@@ -28,16 +30,18 @@ public class Pause : MonoBehaviour {
 
     public void PauseMode()
     {
-        if (pause == false)
+        if (!pause)
         {
             Time.timeScale = 0;
             player.GetComponent<PlayerMoves>().enabled = false;
            // audioObj.SetActive(false);
             pauseObj.SetActive(true);
             pause = true;
+            EventSystem.current.SetSelectedGameObject(continueButton);
         }
         else
         {
+            
             Time.timeScale = 1;
             player.GetComponent<PlayerMoves>().enabled = true;
             //audioObj.SetActive(true);

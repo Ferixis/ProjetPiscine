@@ -2420,7 +2420,7 @@ MonoBehaviour:
   speedText: {fileID: 114850787337136434}
   scoreIncrementFrame: 1
   endPanel: {fileID: 1641089745319526}
-  retryButton: {fileID: 0}
+  retryButton: {fileID: 1926447214646206}
   endText: {fileID: 114468623119870950}
   endScoreText: {fileID: 114796519562326286}
   tutorielText:
@@ -2571,6 +2571,7 @@ MonoBehaviour:
   pause: 0
   player: {fileID: 0}
   pauseObj: {fileID: 1839039198820006}
+  continueButton: {fileID: 1029188618950440}
 --- !u!114 &114537487631271524
 MonoBehaviour:
   m_ObjectHideFlags: 1
