@@ -206,6 +206,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
     {
         CameraManager.Instance.UnParentCamera();
         CameraManager.Instance.PlayDeathSound();
+        LevelManager.Instance.UnShowTuto();
         LevelManager.Instance.LevelEnd(true);
         GameObject explosion = Instantiate(explosionEffect, graphicSpawn.position, graphicSpawn.rotation);
         explosion.transform.parent = null;
