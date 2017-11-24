@@ -11,6 +11,6 @@ public class AddingFuel : IFuel
     {
         player.FuelBoost(fuelAmount);
         Destroy(this.gameObject);
-        Debug.Log("Fuel Up");
+        //Debug.Log("Fuel Up");
     }
 }
