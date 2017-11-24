@@ -73,6 +73,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         LevelManager.Instance.AddGlobalScore(0f);
         CurHealth = Basehealth;
         currentFuel = maxFuel;
+        Debug.Log(Input.GetJoystickNames()[0]);
     }
 
     void FixedUpdate()
@@ -214,7 +215,7 @@ public class PlayerMoves : MonoBehaviour, ITakeDamage
         GameObject explosion = Instantiate(explosionEffect, graphicSpawn.position, graphicSpawn.rotation);
         explosion.transform.parent = null;
         Destroy(this.gameObject);
-        Debug.Log("Death");
+        //Debug.Log("Death");
 
     }
 

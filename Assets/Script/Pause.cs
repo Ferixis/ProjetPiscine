@@ -30,21 +30,36 @@ public class Pause : MonoBehaviour {
 
     public void PauseMode()
     {
-        if (!pause)
+        if (!pause && player != null)
         {
             Time.timeScale = 0;
-            player.GetComponent<PlayerMoves>().enabled = false;
-           // audioObj.SetActive(false);
+            if(player != null)
+            {
+                player.GetComponent<PlayerMoves>().enabled = false;
+            }
             pauseObj.SetActive(true);
             pause = true;
-            EventSystem.current.SetSelectedGameObject(continueButton);
-            Cursor.visible = true;
+
+            if(Input.GetJoystickNames()[0] != "")
+            {
+                EventSystem.current.SetSelectedGameObject(continueButton);
+            }
+            else
+            {
+                Cursor.visible = true;
+            }
+           
+            
         }
-        else
+        else if (pause && player != null)
         {
             
             Time.timeScale = 1;
             player.GetComponent<PlayerMoves>().enabled = true;
+            if (Input.GetJoystickNames()[0] != "")
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+            }
             //audioObj.SetActive(true);
             pauseObj.SetActive(false);
             pause = false;

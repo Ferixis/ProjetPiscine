@@ -81,8 +81,15 @@ public class LevelManager : MonoBehaviour {
         
         endScoreText.text = "Score : " + actualScore.ToString("");
         endPanel.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(retryButton);
-        Cursor.visible = true;
+
+        if(Input.GetJoystickNames()[0] != "")
+        {
+            EventSystem.current.SetSelectedGameObject(retryButton);
+        }
+        else
+        {
+            Cursor.visible = true;
+        }        
     }
 
     public void NextStepTuto()
