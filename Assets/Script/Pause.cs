@@ -16,7 +16,8 @@ public class Pause : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+
+       
 	}
 	
 	// Update is called once per frame
@@ -33,14 +34,14 @@ public class Pause : MonoBehaviour {
         if (!pause && player != null)
         {
             Time.timeScale = 0;
-            if(player != null)
+            if (player != null)
             {
                 player.GetComponent<PlayerMoves>().enabled = false;
             }
             pauseObj.SetActive(true);
             pause = true;
 
-            if(Input.GetJoystickNames()[0] != "")
+            if (Input.GetJoystickNames()[0] != "")
             {
                 EventSystem.current.SetSelectedGameObject(continueButton);
             }
@@ -56,6 +57,7 @@ public class Pause : MonoBehaviour {
             
             Time.timeScale = 1;
             player.GetComponent<PlayerMoves>().enabled = true;
+
             if (Input.GetJoystickNames()[0] != "")
             {
                 EventSystem.current.SetSelectedGameObject(null);
