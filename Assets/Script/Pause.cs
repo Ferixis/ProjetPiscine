@@ -41,14 +41,12 @@ public class Pause : MonoBehaviour {
             pauseObj.SetActive(true);
             pause = true;
 
-            if (Input.GetJoystickNames()[0] != "")
-            {
+            
                 EventSystem.current.SetSelectedGameObject(continueButton);
-            }
-            else
-            {
+            
+           
                 Cursor.visible = true;
-            }
+            
            
             
         }
@@ -58,10 +56,9 @@ public class Pause : MonoBehaviour {
             Time.timeScale = 1;
             player.GetComponent<PlayerMoves>().enabled = true;
 
-            if (Input.GetJoystickNames()[0] != "")
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-            }
+           
+            EventSystem.current.SetSelectedGameObject(null);
+            
             //audioObj.SetActive(true);
             pauseObj.SetActive(false);
             pause = false;
